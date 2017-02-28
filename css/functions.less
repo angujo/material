@@ -1,0 +1,79 @@
+@import "variables";
+
+.set-colors(@list,@alternate) {
+  .iter(length(@list));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @pair: extract(@list, @i);
+    @key: extract(@pair, 1);
+    @value: extract(@pair, 2);
+    .@{prefix}-text-@{key}, .@{prefix}-hover-text-@{key}:hover {
+      color: @value;
+    }
+    .@{prefix}-@{key}, .@{prefix}-hover-@{key} {
+      background-color: @value;
+      color: @alternate;
+    }
+  }
+}
+
+.set-grid-media(@prefix) {
+  @n: ~"@{column-prefix}-@{prefix}";
+  .counter(@col-count, @n);
+  .counter(@j,@name) when (@j>0) {
+    .counter(@j - 1, @name);
+    @w: (@j * 100)/@col-count;
+    .@{name}-@{j} {
+      width: unit(@w, %);
+    }
+    .@{name}-offset-right-@{j} when (@w<100) {
+      margin-right: unit(@w, %);
+    }
+    .@{name}-offset-left-@{j} when (@w<100) {
+      margin-left: unit(@w, %);
+    }
+  }
+}
+
+.set-grids(@grids) {
+  .iter(length(@grids));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @grid: extract(@grids, @i);
+    @n: ~"@{column-prefix}-@{grid}";
+    .counter(@col-count, @n);
+  }
+  .counter(@j,@name) when (@j>0) {
+    .counter(@j - 1, @name);
+    @w: (@j * 100)/@col-count;
+    .@{name}-@{j} {
+      width: unit(@w, %);
+    }
+    .@{name}-offset-right-@{j} when (@w<100) {
+      margin-right: unit(@w, %);
+    }
+    .@{name}-offset-left-@{j} when (@w<100) {
+      margin-left: unit(@w, %);
+    }
+  }
+}
+
+.set-color-group(@groups) {
+  .iter(length(@color-group));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @pair: extract(@color-group, @i);
+    @key: extract(@pair, 1);
+    @value: extract(@pair, 2);
+    .alert-@{key}, .btn-@{key}, .tag-@{key}, .badge-@{key} {
+      background: @value;
+      color: #ffffff;
+    }
+    .btn-@{key}:hover {
+      background: extract(@color-group-hover, @i);
+    }
+    .text-@{key} {
+      color: @value;
+    }
+  }
+}
