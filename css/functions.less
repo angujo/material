@@ -77,3 +77,14 @@
     }
   }
 }
+
+.headlines() {
+  @all: h0;
+  .iter(6);
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    h@{i} {
+      font-weight: bold;
+    }
+  }
+}

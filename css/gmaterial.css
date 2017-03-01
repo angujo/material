@@ -2,8 +2,50 @@
 Colors;
 red,gree,blue,grey, black,white
  */
+@font-face {
+  font-family: "roboto-regular";
+  src: url(../roboto/RobotoCondensed-Regular.ttf);
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url(../roboto/RobotoCondensed-Bold.ttf);
+}
 * {
   box-sizing: border-box;
+}
+body,
+html {
+  font-family: "roboto-regular";
+}
+i {
+  font-family: "roboto-italic";
+}
+b {
+  font-family: "roboto-bold";
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+h1 {
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+}
+h3 {
+  font-weight: bold;
+}
+h4 {
+  font-weight: bold;
+}
+h5 {
+  font-weight: bold;
+}
+h6 {
+  font-weight: bold;
+}
+.text-bold {
+  font-family: "roboto-bold";
 }
 .row {
   display: flex;
