@@ -84,7 +84,9 @@
   .iter(@i) when (@i > 0) {
     .iter(@i - 1);
     h@{i} {
-      font-weight: bold;
+      font-size: unit(@max-font-size - (@i+2), px);
+      margin-top: unit(18 - (@i), px);
+      margin-bottom: unit(18 - (@i), px);
     }
   }
 }
