@@ -53,13 +53,11 @@
       & when not (@dark = black) and not (@light = white){
         .backgroundColors(~"@{name}-@{dark}", @darkColor);
         .backgroundColors(~"@{name}-@{light}", @lightColor);
-      }
-      .borderColor(~"@{name}-@{dark}", @darkColor);
-      .borderColor(~"@{name}-@{light}", @lightColor);
-      .borderHover(~"@{name}-@{dark}", @darkColor);
-      .borderHover(~"@{name}-@{light}", @lightColor);
-      .border.border-@{name}-@{light},.border.border-hover-@{name}-@{light}:hover {
-        border-color: @hsl;
+        .borderColor(~"@{name}-@{dark}", @darkColor);
+        .borderColor(~"@{name}-@{light}", @lightColor);
+        .border.border-@{name}-@{light}, .border.border-hover-@{name}-@{light}:hover {
+          border-color: @hsl;
+        }
       }
     }
     .bg-@{name} {
@@ -74,9 +72,12 @@
 }
 
 .backgroundColors(@name,@value) {
-  .bg-@{name} {
+  .bg-@{name}, .bg-hover-@{name}:hover {
     background-color: @value;
     color: contrast(@value);
+  }
+  .text-@{name}, .text-hover-@{name}:hover {
+    color: @value;
   }
 }
 
@@ -85,19 +86,8 @@
   .itB(@i) when (@i > 0) {
     .itB(@i - 1);
     @b: extract(@sides, @i);
-    .border-@{b}-@{name} {
-      border-@{b}-color: @value;
-    }
-  }
-}
-
-.borderHover(@color,@value) {
-  .itB(length(@sides));
-  .itB(@i) when (@i > 0) {
-    .itB(@i - 1);
-    @b: extract(@sides, @i);
-    [class^="border-@{b}-"], [class*="border-@{b}-"] {
-      &.border-hover-@{color}:hover {
+    [class^="border-@{b}-"].border-hover-@{name}:hover, [class*="border-@{b}-"].border-hover-@{name}:hover,.border-@{b}-@{name}  {
+      & {
         border-@{b}-color: @value;
       }
     }
