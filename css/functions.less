@@ -17,6 +17,73 @@
   }
 }
 
+.all-colors() {
+  .iter(length(@light-colors), @light-colors);
+  .iter(length(@dark-colors), @dark-colors);
+  .iter(@i,@colors) when (@i > 0) {
+    .iter(@i - 1, @colors);
+    @pair: extract(@colors, @i);
+    @key: extract(@pair, 1);
+    @value: extract(@pair, 2);
+    .border-@{key} {
+      border-color: @value;
+    }
+    .borderColor(@key, @value);
+  }
+}
+
+.borderColor(@name,@value) {
+  .itB(length(@sides));
+  .itB(@i) when (@i > 0) {
+    .itB(@i - 1);
+    @b: extract(@sides, @i);
+    .border-@{b}-@{name} {
+      border-@{b}-color: @value;
+    }
+  }
+}
+
+.borderHover(@name,@value) {
+  .itB(length(@sides));
+  .itB(@i) when (@i > 0) {
+    .itB(@i - 1);
+    @b: extract(@sides, @i);
+    &.border-hover-@{name}:hover {
+      border-@{b}-color: @value;
+    }
+  }
+}
+
+.borders() {
+  .border {
+    border: medium solid;
+    padding-left: unit(@spacing, px);
+    padding-right: unit(@spacing, px);
+    .sizeB(length(@sizes), border);
+  }
+  .itB(length(@sides));
+  .itB(@i) when (@i > 0) {
+    .itB(@i - 1);
+    @b: extract(@sides, @i);
+    @name: ~"border-@{b}";
+    [class^="@{name}-"], [class*="@{name}-"] {
+      border: none;
+      padding-left: unit(@spacing, px);
+      padding-right: unit(@spacing, px);
+        @{name}-width: medium;
+        @{name}-style: solid;
+      .sizeB(length(@sizes), @name);
+    }
+  }
+  .sizeB(@j,@name) when (@j > 0) {
+    .sizeB(@j - 1, @name);
+    @s: extract(@sizes, @j);
+    &.border-@{s} when not(@s=medium) {
+        @{name}-width: @s;
+    }
+  }
+}
+
 .set-grid-media(@prefix) {
   @n: ~"@{column-prefix}-@{prefix}";
   .counter(@col-count, @n);
