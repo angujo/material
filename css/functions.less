@@ -33,6 +33,50 @@
   }
 }
 
+.setColors() {
+  .iter(length(@primary-colors));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @cs: extract(@primary-colors, @i);
+    @n: extract(@cs, 1);
+    @v: extract(@cs, 2);
+    .intensity(@n, @v);
+  }
+  .intensity(@name,@hsl) {
+    .iter(length(@darkColorDesc));
+    .iter(@i) when (@i>0) {
+      .iter(@i - 1);
+      @dark: extract(@darkColorDesc, @i);
+      @light: extract(@lightColorDesc, @i);
+      @darkColor: darken(@hsl,  ((@i) * (100/(length(@darkColorDesc))) * 1%), relative);
+      @lightColor: lighten(@hsl,  ((@i) * (100/(length(@lightColorDesc))) * 1%), relative);
+      & when not (@dark = black) and not (@light = white){
+        .backgroundColors(~"@{name}-@{dark}", @darkColor);
+        .backgroundColors(~"@{name}-@{light}", @lightColor);
+        .borderColor(~"@{name}-@{dark}", @darkColor);
+        .borderColor(~"@{name}-@{light}", @lightColor);
+        .borderHover(~"@{name}-@{dark}", @darkColor);
+        .borderHover(~"@{name}-@{light}", @lightColor);
+      }
+    }
+    .bg-@{name} {
+      background-color: darken(@hsl, 0);
+      color: contrast(darken(@hsl, 0));
+    }
+    .border-@{name} {
+      border-color: @hsl;
+    }
+    .borderColor(@name, darken(@hsl, 0));
+  }
+}
+
+.backgroundColors(@name,@value) {
+  .bg-@{name} {
+    background-color: @value;
+    color: contrast(@value);
+  }
+}
+
 .borderColor(@name,@value) {
   .itB(length(@sides));
   .itB(@i) when (@i > 0) {
@@ -49,9 +93,8 @@
   .itB(@i) when (@i > 0) {
     .itB(@i - 1);
     @b: extract(@sides, @i);
-    @name: ~"border-@{b}";
-    [class^="@{name}-"], [class*="@{name}-"] {
-      &.border-hover-@{color}:hover{
+    [class^="border-@{b}-"], [class*="border-@{b}-"] {
+      &.border-hover-@{color}:hover {
         border-@{b}-color: @value;
       }
     }

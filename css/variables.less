@@ -3,7 +3,7 @@
 @col-count: 12;
 /*
 Colors;
-red,gree,blue,grey, black,white
+red,green,blue,grey, black,white
  */
 
 @light-colors: black #000, grey #7D7D7D, grey-1 #E5E5E5, grey-2 #CBCBCB, grey-3 #B1B1B1, grey-4 #979797, grey-5 #636363, grey-6 #494949, grey-7 #2F2F2F, grey-8 #151515, red #CB0000, red-5 #B10000, red-6 #970000, red-7 #7D0000, red-8 #630000, green #00CB00, green-1 #82FF82, green-2 #68FF68, green-3 #4EFF4E, green-4 #34FF34, green-5 #00B100, green-6 #009700, green-7 #007D00, green-8 #006300, blue #0000CB, blue-1 #9C9CFF, blue-2 #8282FF, blue-3 #6868FF, blue-4 #4E4EFF, blue-5 #0000B1, blue-6 #000097, blue-7 #00007D, blue-8 #000063; //Where text is dark #000
@@ -12,6 +12,14 @@ red,gree,blue,grey, black,white
 
 @grids: xs, sm, md, lg;
 @grids-semi: sm, lg;
+
+/** purple, indigo, teal, green, blue, grey, red, orange, pink */
+@primary-colors: purple hsl(291.2, 63.7%, 42.2%), indigo hsl(230.8, 48.4%, 47.8%), teal hsl(174.4, 100%, 29.4%), green hsl(90, 80%, 30%), blue hsl(204.1, 69.9%, 53.1%), grey hsl(66, 0%, 50%),
+red hsl(5.6, 81%, 52%), orange hsl(35.8, 100%, 50%), pink hsl(339.6, 82.2%, 51.6%), yellow hsl(60, 100%, 50%);
+//Below should be of equal length for either side of the color
+@darkColorDesc: dark, darker, darkest, black;
+@lightColorDesc: light , lighter , lightest , white;
+
 @color-group: success #4CAF50, warning #FF8282, danger #B10000, info #3498db, default #7D7D7D;
 @color-group-hover: success #4CAF50, warning #FF8282, danger #B10000, info #3cb0fd, default #7D7D7D;
 @color-grouped: btn, alert;

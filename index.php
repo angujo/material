@@ -2,6 +2,12 @@
 $colors =
     ['black', 'grey', 'grey-1', 'grey-2', 'grey-3', 'grey-4', 'grey-5', 'grey-6', 'grey-7', 'grey-8', 'red', 'red-1', 'red-2', 'red-3', 'red-4', 'red-5', 'red-6', 'red-7', 'red-8', 'green', 'green-1',
      'green-2', 'green-3', 'green-4', 'green-5', 'green-6', 'green-7', 'green-8', 'blue', 'blue-1', 'blue-2', 'blue-3', 'blue-4', 'blue-5', 'blue-6', 'blue-7', 'blue-8']; ?>
+<?php
+$realColors     = ['purple', 'indigo', 'teal', 'green', 'blue', 'grey', 'red', 'orange', 'pink', 'yellow'];
+$colorIntensity = ['darkest', 'darker', 'dark', '', 'light', 'lighter', 'lightest'];
+$fullColors     =
+    array_reduce(array_map(function ($c) use ($colorIntensity) { return array_map(function ($i) use ($c) { return $c . ($i ? '-' . $i : ''); }, $colorIntensity); }, $realColors), 'array_merge', []);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,6 +30,7 @@ $colors =
                 <a href="#grids">Grids</a>
             </li>
             <li><a href="#borders">Borders</a></li>
+            <li><a href="#borders">Colors</a></li>
             <li>
                 <a href="#text">Text</a>
                 <ul>
@@ -65,28 +72,42 @@ $colors =
         </ul>
     </nav>
     <main role="main">
+        <section id="colors">
+            <h3>Colors</h3>
+            <div class="row colors">
+                <?php foreach ($realColors as $c) { ?>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 bg-<?= $c; ?>xx">
+                        <?php foreach ($colorIntensity as $i => $col) { ?>
+                            <div class="bg<?= $col ? '-' . $c . '-' . $col : '-' . $c; ?>">
+                                <p><?= ucwords($c), ($col ? '-' : ''), ucwords($col); ?></p>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
         <section id="borders">
             <h3>Borders</h3>
             <?php $borders = ['top', 'left', 'bottom', 'right'];
-            $sizes         = ['thick', 'thin'];?>
+            $sizes         = ['thick', 'thin']; ?>
             <p></p>
-            <div class="border border-thin border-<?=($color = $colors[rand(0, (count($colors) - 1))])?>">
-                <b>Border thin:</b>(<?=ucwords($color)?>)
+            <div class="border border-thin border-<?= ($color = $colors[rand(0, (count($colors) - 1))]) ?>">
+                <b>Border thin:</b>(<?= ucwords($color) ?>)
                 <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                     fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
             </div>
             <p></p>
-            <div class="border border-<?=($color = $colors[rand(0, (count($colors) - 1))])?>">
-                <b>Border:</b>(<?=ucwords($color)?>)
+            <div class="border border-<?= ($color = $colors[rand(0, (count($colors) - 1))]) ?>">
+                <b>Border:</b>(<?= ucwords($color) ?>)
                 <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                     fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
             </div>
-           <?php foreach ($borders as $border) {
+            <?php foreach ($borders as $border) {
                 $color = $colors[rand(0, (count($colors) - 1))];
                 ?>
                 <p></p>
                 <div class="border-<?= $border, '-', $color ?>">
-                    <b>Border <?= ucwords($border); ?>:</b>(<?=ucwords($color)?>)
+                    <b>Border <?= ucwords($border); ?>:</b>(<?= ucwords($color) ?>)
                     <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                         fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
                 </div>
@@ -99,7 +120,7 @@ $colors =
                 ?>
                 <p></p>
                 <div class="border-<?= $border, '-', $color ?> border-<?= $size ?>">
-                    <b>Border <?= ucwords($border),' ',ucwords($size); ?>:</b>(<?=ucwords($color)?>)
+                    <b>Border <?= ucwords($border), ' ', ucwords($size); ?>:</b>(<?= ucwords($color) ?>)
                     <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                         fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
                 </div>
