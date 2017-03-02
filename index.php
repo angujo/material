@@ -91,23 +91,23 @@ $fullColors     =
             <?php $borders = ['top', 'left', 'bottom', 'right'];
             $sizes         = ['thick', 'thin']; ?>
             <p></p>
-            <div class="border border-thin border-<?= ($color = $colors[rand(0, (count($colors) - 1))]) ?>">
-                <b>Border thin:</b>(<?= ucwords($color) ?>)
+            <div class="border border-thin border-<?= ($color = $fullColors[rand(0, (count($fullColors) - 1))]) ?>">
+                <b>Border thin:</b>(<?= ucwords($color) ?>)<code>.border .border-thin .border-<?= ($color) ?></code>
                 <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                     fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
             </div>
             <p></p>
-            <div class="border border-<?= ($color = $colors[rand(0, (count($colors) - 1))]) ?>">
-                <b>Border:</b>(<?= ucwords($color) ?>)
+            <div class="border border-<?= ($color = $fullColors[rand(0, (count($fullColors) - 1))]) ?>">
+                <b>Border:</b>(<?= ucwords($color) ?>)<code>.border .border-<?= ($color) ?></code>
                 <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                     fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
             </div>
             <?php foreach ($borders as $border) {
-                $color = $colors[rand(0, (count($colors) - 1))];
+                $color = $fullColors[rand(0, (count($fullColors) - 1))];
                 ?>
                 <p></p>
                 <div class="border-<?= $border, '-', $color ?>">
-                    <b>Border <?= ucwords($border); ?>:</b>(<?= ucwords($color) ?>)
+                    <b>Border <?= ucwords($border); ?>:</b>(<?= ucwords($color) ?>)<code>.border-<?= $border, '-', $color ?></code>
                     <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                         fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
                 </div>
@@ -115,17 +115,31 @@ $fullColors     =
             <?php } ?>
             <?php
             foreach ($sizes as $size) {
-                $color  = $colors[rand(0, (count($colors) - 1))];
+                $color  = $fullColors[rand(0, (count($fullColors) - 1))];
                 $border = $borders[rand(0, (count($borders) - 1))];
                 ?>
                 <p></p>
                 <div class="border-<?= $border, '-', $color ?> border-<?= $size ?>">
-                    <b>Border <?= ucwords($border), ' ', ucwords($size); ?>:</b>(<?= ucwords($color) ?>)
+                    <b>Border <?= ucwords($border), ' ', ucwords($size); ?>:</b>(<?= ucwords($color) ?>) <code>.border-<?= $border, '-', $color ?> .border-<?= $size ?></code>
                     <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
                         fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
                 </div>
                 <p></p>
             <?php } ?>
+            <p></p>
+            <div class="border border-thick border-<?= ($color = $fullColors[rand(0, (count($fullColors) - 1))]) ?> border-hover-<?= ($color2 = $fullColors[rand(0, (count($fullColors) - 1))]) ?>">
+                <b>Border thin:</b>(<?= ucwords($color) ?>)<code>.border .border-hover-<?= ($color2) ?> .border-<?= ($color) ?></code>
+                <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
+                    fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
+            </div>
+            <p></p>
+            <div class="border-<?= ($border = $borders[rand(0, (count($borders) - 1))]), '-', ($color1 = $fullColors[rand(0, (count($fullColors) - 1))]) ?> border-thick  border-hover-<?= ($color =
+                $fullColors[rand(0, (count($fullColors) - 1))]) ?>">
+                <b>Border:</b>(<?= ucwords($color) ?>)<code>.border-<?= ($border) ?>-<?= ($color1) ?> .border-hover-<?= ($color) ?></code>
+                <p> Nuptia festus ausus est.Heu, ionicis tormento!Animaliss sunt turpiss de audax parma.Cadunt acceleratrix ducunt ad festus calceus.Raptus bromiums ducunt ad abactus.Heu,
+                    fermium!A falsis, lacta rusticus equiso.A falsis, cursus nobilis gemna.</p>
+            </div>
+            <p></p>
         </section>
         <section id="grids">
             <div class="row">
