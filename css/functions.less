@@ -29,6 +29,7 @@
       border-color: @value;
     }
     .borderColor(@key, @value);
+    .borderHover(@key, @value);
   }
 }
 
@@ -43,13 +44,16 @@
   }
 }
 
-.borderHover(@name,@value) {
+.borderHover(@color,@value) {
   .itB(length(@sides));
   .itB(@i) when (@i > 0) {
     .itB(@i - 1);
     @b: extract(@sides, @i);
-    &.border-hover-@{name}:hover {
-      border-@{b}-color: @value;
+    @name: ~"border-@{b}";
+    [class^="@{name}-"], [class*="@{name}-"] {
+      &.border-hover-@{color}:hover{
+        border-@{b}-color: @value;
+      }
     }
   }
 }
