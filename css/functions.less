@@ -72,7 +72,7 @@
 }
 
 .backgroundColors(@name,@value) {
-  .bg-@{name}, .bg-hover-@{name}:hover {
+  .bg-@{name}, .bg-hover-@{name}:hover, .card-@{name} > header, .card-@{name} > footer {
     background-color: @value;
     color: contrast(@value);
   }
@@ -86,7 +86,7 @@
   .itB(@i) when (@i > 0) {
     .itB(@i - 1);
     @b: extract(@sides, @i);
-    [class^="border-@{b}-"].border-hover-@{name}:hover, [class*="border-@{b}-"].border-hover-@{name}:hover,.border-@{b}-@{name}  {
+    [class^="border-@{b}-"].border-hover-@{name}:hover, [class*="border-@{b}-"].border-hover-@{name}:hover, .border-@{b}-@{name} {
       & {
         border-@{b}-color: @value;
       }

@@ -31,6 +31,7 @@ $fullColors     =
             </li>
             <li><a href="#borders">Borders</a></li>
             <li><a href="#borders">Colors</a></li>
+            <li><a href="#cards">Cards</a></li>
             <li>
                 <a href="#text">Text</a>
                 <ul>
@@ -72,6 +73,83 @@ $fullColors     =
         </ul>
     </nav>
     <main role="main">
+        <section id="cards">
+            <h3>Cards</h3>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="card-blue-dark">
+                        <header><h3>Card 101</h3></header>
+                        <section>
+                            <p>Content based card layout. <code>.card-blue-dark</code></p>
+                        </section>
+                        <footer>
+                            Some footer
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="card">
+                        <figure>
+                            <img src="img/nairobi.jpg">
+                        </figure>
+                        <section>
+                            <p>Image based card layout. <code>.card</code></p>
+                        </section>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="card-teal-light">
+                        <figure>
+                            <img src="img/nairobi.jpg">
+                        </figure>
+                        <section>
+                            <p>Image based card layout.</code>
+                            </p>
+                            <div>
+                                <code>
+                                    &lt;div class=&quot;card-teal-light&quot;&gt;<br/>
+                                    &nbsp;&nbsp;&lt;figure&gt; &lt;img src=&quot;...&quot;&gt; &lt;/figure&gt;<br/>
+                                    &nbsp;&nbsp;&lt;section&gt; &lt;p&gt;...&lt;/p&gt; &lt;/section&gt;<br/>
+                                    &nbsp;&nbsp;&lt;footer&gt; Some footer &lt;/footer&gt;<br/>
+                                    &lt;/div&gt;
+                                </code>
+                            </div>
+                        </section>
+                        <footer>
+                            Some footer
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="card-teal-light">
+                        <figure>
+                            <img src="img/nairobi.jpg">
+                            <figcaption>
+                                Nairobi
+                            </figcaption>
+                        </figure>
+                        <section>
+                            <p>Image based card layout.</code>
+                            </p>
+                            <div>
+                                <code>
+                                    &lt;div class=&quot;card-teal-light&quot;&gt;<br/>
+                                    &nbsp;&nbsp;&lt;figure&gt; &lt;img src=&quot;...&quot;&gt; &lt;/figure&gt;<br/>
+                                    &nbsp;&nbsp;&lt;section&gt; &lt;p&gt;...&lt;/p&gt; &lt;/section&gt;<br/>
+                                    &nbsp;&nbsp;&lt;footer&gt; Some footer &lt;/footer&gt;<br/>
+                                    &lt;/div&gt;
+                                </code>
+                            </div>
+                        </section>
+                        <footer>
+                            Some footer
+                        </footer>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                </div>
+            </div>
+        </section>
         <section id="colors">
             <h3>Colors</h3>
             <div class="row colors">
