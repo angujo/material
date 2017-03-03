@@ -29,7 +29,6 @@
       border-color: @value;
     }
     .borderColor(@key, @value);
-    .borderHover(@key, @value);
   }
 }
 
@@ -94,16 +93,31 @@
   }
 }
 
-.borders() {
+.bordersPaddings() {
   .border {
     border: medium solid;
     padding-left: unit(@spacing, px);
     padding-right: unit(@spacing, px);
     .sizeB(length(@sizes), border);
   }
-  .itB(length(@sides));
-  .itB(@i) when (@i > 0) {
-    .itB(@i - 1);
+  .padding {
+    padding: unit(@spacing, px);
+  }
+  .sidesIter();
+}
+
+.sizeB(@j,@name) when (@j > 0) {
+  .sizeB(@j - 1, @name);
+  @s: extract(@sizes, @j);
+  &.border-@{s} when not(@s=medium) {
+      @{name}-width: @s;
+  }
+}
+
+.sidesIter() {
+  .iter(length(@sides));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
     @b: extract(@sides, @i);
     @name: ~"border-@{b}";
     [class^="@{name}-"], [class*="@{name}-"] {
@@ -114,32 +128,56 @@
         @{name}-style: solid;
       .sizeB(length(@sizes), @name);
     }
-  }
-  .sizeB(@j,@name) when (@j > 0) {
-    .sizeB(@j - 1, @name);
-    @s: extract(@sizes, @j);
-    &.border-@{s} when not(@s=medium) {
-        @{name}-width: @s;
+    .padding-@{b} {
+      padding-@{b}: unit(@spacing, px);
     }
+    .iterPad(length(@paddings), @b);
+  }
+  .iterPad(length(@paddings), "test");
+  .iterPad(@j,@dir) when (@j>0) {
+    @s: extract(@paddings, @j);
+    @n: extract(@s, 1);
+    @w: extract(@s, 2);
+    .padding-@{dir}-@{n} when not (@dir = "test"){
+      padding-@{dir}: unit(@w, px);
+    }
+    .padding-@{n} when  (@dir = "test"){
+      padding: unit(@w, px);
+    }
+    .iterPad(@j - 1, @dir);
+  }
+}
+
+.gridAdjustments() {
+  @txt-left: replace(~"@{grids}", '([a-z]+)(,|$)', '.text-$1-left$2', g);
+  @{txt-left} {
+    text-align: left;
+  }
+  @txt-right: replace(~"@{grids}", '([a-z]+)(,|$)', '.text-$1-right$2', g);
+  @{txt-right} {
+    text-align: right;
+  }
+  @txt-center: replace(~"@{grids}", '([a-z]+)(,|$)', '.text-$1-center$2', g);
+  @{txt-center} {
+    text-align: center;
+  }
+}
+
+.gridAdjust(@gridName) {
+  .text-@{gridName}-left {
+    text-align: left;
+  }
+  .text-@{gridName}-right {
+    text-align: right;
+  }
+  .text-@{gridName}-center {
+    text-align: center;
   }
 }
 
 .set-grid-media(@prefix) {
   @n: ~"@{column-prefix}-@{prefix}";
-  .counter(@col-count, @n);
-  .counter(@j,@name) when (@j>0) {
-    .counter(@j - 1, @name);
-    @w: (@j * 100)/@col-count;
-    .@{name}-@{j} {
-      width: unit(@w, %);
-    }
-    .@{name}-offset-right-@{j} when (@w<100) {
-      margin-right: unit(@w, %);
-    }
-    .@{name}-offset-left-@{j} when (@w<100) {
-      margin-left: unit(@w, %);
-    }
-  }
+  .gridCounter(@col-count, @n);
 }
 
 .set-grids(@grids) {
@@ -148,20 +186,21 @@
     .iter(@i - 1);
     @grid: extract(@grids, @i);
     @n: ~"@{column-prefix}-@{grid}";
-    .counter(@col-count, @n);
+    .gridCounter(@col-count, @n);
   }
-  .counter(@j,@name) when (@j>0) {
-    .counter(@j - 1, @name);
-    @w: (@j * 100)/@col-count;
-    .@{name}-@{j} {
-      width: unit(@w, %);
-    }
-    .@{name}-offset-right-@{j} when (@w<100) {
-      margin-right: unit(@w, %);
-    }
-    .@{name}-offset-left-@{j} when (@w<100) {
-      margin-left: unit(@w, %);
-    }
+}
+
+.gridCounter(@j,@name) when (@j>0) {
+  .gridCounter(@j - 1, @name);
+  @w: (@j * 100)/@col-count;
+  .@{name}-@{j} {
+    width: unit(@w, %);
+  }
+  .@{name}-offset-right-@{j} when (@w<100) {
+    margin-right: unit(@w, %);
+  }
+  .@{name}-offset-left-@{j} when (@w<100) {
+    margin-left: unit(@w, %);
   }
 }
 
@@ -174,7 +213,7 @@
     @value: extract(@pair, 2);
     .alert-@{key}, .btn-@{key}, .tag-@{key}, .badge-@{key} {
       background: @value;
-      color: #ffffff;
+      color: contrast(@value);
     }
     .btn-@{key}:hover {
       background: extract(@color-group-hover, @i);

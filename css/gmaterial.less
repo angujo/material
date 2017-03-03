@@ -11,6 +11,12 @@
   font-family: @font-bold;
 }
 
+.text-italic {
+  font-style: italic;
+}
+
+.gridAdjustments();
+
 .row {
   display: flex;
   align-items: flex-start;
@@ -69,6 +75,11 @@
   }
   > header {
   }
+  > .btn-group {
+  }
+  > a.btn, button, input[type=button], input[type=submit], input[type=reset] {
+    display: block;
+  }
   > section {
     text-align: left;
     padding-top: 10px;
@@ -124,7 +135,7 @@ button, input, a {
   }
 }
 
-.borders();
+.bordersPaddings();
 .setColors();
 .set-colors(@light-colors, #fff);
 .set-colors(@dark-colors, #000);
