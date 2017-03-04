@@ -8,3 +8,11 @@
     margin: 0;
     padding: 1rem;
 }
+
+[class^='round-'], [col*='round-'] {
+    display: inline-block;
+    padding:10px;
+}
+.button-sizes > *{
+    margin: 0 3px;
+}

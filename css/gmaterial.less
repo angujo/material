@@ -16,8 +16,9 @@
 }
 
 .gridAdjustments();
-
-.row {
+.roundCorners;
+.rowColumns;
+.rowx {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -36,12 +37,9 @@
 
 .card, [class^='card-'], [class*='card-'] {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-  > header, > footer, > section {
+  @btns: e(@buttonElements);
+  > header, > footer, > section, .button-group {
     padding: 6px 15px;
-    > * {
-      padding: 0;
-      margin: 0;
-    }
   }
   > figure {
     margin: 0;
@@ -75,10 +73,25 @@
   }
   > header {
   }
-  > .btn-group {
+  > .button-group {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    > * {
+      flex-grow: 1;
+      margin-left: 5px;
+      margin-right: 5px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
-  > a.btn, button, input[type=button], input[type=submit], input[type=reset] {
-    display: block;
+  > button, > input[type=reset], > input[type=submit], > input[type=button], > [class^='btn-'], > [class*='btn-'] {
+    display: block !important;
   }
   > section {
     text-align: left;
@@ -88,6 +101,8 @@
   > footer {
   }
 }
+
+.buttons;
 
 input:not(.default):not([type=radio]):not([type=checkbox]):not([type=range]):not([type=submit]):not([type=button]):not([type=reset]):not([type=color]), textarea:not(.default),
 select {
@@ -101,37 +116,6 @@ select {
   padding: 5px 10px 5px 3px;
   &:focus {
     border-bottom: 1.5px solid #3f9918;
-  }
-}
-
-button, input, a {
-  &[type=submit], &[type=reset], &[type=button], &.btn {
-    outline: none;
-    line-height: 1.5;
-    display: inline-block;
-    outline: 0;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none !important;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-    /*color: #ffffff;
-    background-color: #000;*/
-    font-size: 14px;
-    padding: 5px 10px 5px 10px;
-    border: .1px solid #b7b7b7;
-    &.btn-round {
-      border-radius: 10px;
-    }
-    &:not([disabled]):not(.default):not(.disabled) {
-      &:hover {
-        box-shadow: 0 0 15px #000;
-      }
-    }
-    &[disabled], &.disabled {
-      background-color: #cbcbcb;
-    }
   }
 }
 

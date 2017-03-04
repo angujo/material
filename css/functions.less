@@ -57,11 +57,26 @@
         .border.border-@{name}-@{light}, .border.border-hover-@{name}-@{light}:hover {
           border-color: @hsl;
         }
+        .btn-@{name}-@{light} {
+          .buttonColoring(@lightColor);
+          &:hover {
+            .buttonColoring(@lightColor, 'hover');
+          }
+        }
+        .btn-@{name}-@{dark} {
+          .buttonColoring(@darkColor);
+          &:hover {
+            .buttonColoring(@darkColor, 'hover');
+          }
+        }
       }
     }
     .bg-@{name} {
       background-color: darken(@hsl, 0);
       color: contrast(darken(@hsl, 0));
+    }
+    .btn-@{name} {
+      .buttonColoring(@hsl);
     }
     .border-@{name} {
       border-color: @hsl;
@@ -131,6 +146,9 @@
     .padding-@{b} {
       padding-@{b}: unit(@spacing, px);
     }
+    .margin-@{b} {
+      margin-@{b}: unit(@spacing, px) !important;
+    }
     .iterPad(length(@paddings), @b);
   }
   .iterPad(length(@paddings), "test");
@@ -138,11 +156,33 @@
     @s: extract(@paddings, @j);
     @n: extract(@s, 1);
     @w: extract(@s, 2);
-    .padding-@{dir}-@{n} when not (@dir = "test"){
+    .padding-@{dir}-@{n} when not (@dir = "test") {
       padding-@{dir}: unit(@w, px);
     }
-    .padding-@{n} when  (@dir = "test"){
+    .padding-@{n} when (@dir = "test") {
       padding: unit(@w, px);
+    }
+    .padding-hspace-@{n} when (@dir = "test") {
+      padding-top: unit(@w, px);
+      padding-bottom: unit(@w, px);
+    }
+    .padding-vspace-@{n} when (@dir = "test") {
+      padding-left: unit(@w, px);
+      padding-right: unit(@w, px);
+    }
+    .margin-@{dir}-@{n} when not (@dir = "test") {
+      margin-@{dir}: unit(@w, px) !important;
+    }
+    .margin-@{n} when (@dir = "test") {
+      margin: unit(@w, px) !important;
+    }
+    .margin-hspace-@{n} when (@dir = "test") {
+      margin-top: unit(@w, px) !important;
+      margin-bottom: unit(@w, px) !important;
+    }
+    .margin-vspace-@{n} when (@dir = "test") {
+      margin-left: unit(@w, px) !important;
+      margin-right: unit(@w, px) !important;
     }
     .iterPad(@j - 1, @dir);
   }
@@ -211,12 +251,15 @@
     @pair: extract(@color-group, @i);
     @key: extract(@pair, 1);
     @value: extract(@pair, 2);
-    .alert-@{key}, .btn-@{key}, .tag-@{key}, .badge-@{key} {
+    .alert-@{key}, .tag-@{key}, .badge-@{key} {
       background: @value;
       color: contrast(@value);
     }
-    .btn-@{key}:hover {
-      background: extract(@color-group-hover, @i);
+    .btn-@{key} {
+      .buttonColoring(@value);
+      &:hover {
+        .buttonColoring(@value, 'hover');
+      }
     }
     .text-@{key} {
       color: @value;
@@ -234,5 +277,121 @@
       margin-top: unit(18 - (@i), px);
       margin-bottom: unit(18 - (@i), px);
     }
+  }
+}
+
+.roundCorners() {
+  .iter(length(@rounds));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @pair: extract(@rounds, @i);
+    @name: extract(@pair, 1);
+    @value: extract(@pair, 2);
+    .round-@{name} when not(@name = circle) {
+      border-radius: unit(@value, px);
+      min-width: unit(@value, px);
+      min-height: unit(@value, px);
+    }
+    .circle, .round-@{name} {
+      & when (@name = circle) {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.rowColumns() {
+  @rows: replace(replace(~"@{contents}", '(^|\s)([a-z]+)(\s+)([a-z\-]+)(,|$)', '$1.row-$2$5', g), '-test', '');
+  @columns: replace(~"@{rows}", 'row', 'column', g);
+  @rc: ~"@{rows}, @{columns}";
+  @nw: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.no-wrap$2', g);
+  @str: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.stretch$2', g);
+  @ac: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.align-center$2', g);
+  @ab: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.align-bottom$2', g);
+  @{rc} {
+    display: flex;
+    align-content: stretch;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  @{rows} {
+    flex-direction: row !important;
+  }
+  @{columns} {
+    flex-direction: column !important;
+  }
+  @{nw} {
+    flex-wrap: nowrap !important;
+  }
+  @{str} {
+    align-items: stretch !important;
+  }
+  @{ac} {
+    align-items: center !important;
+  }
+  @{ab} {
+    align-items: flex-end !important;
+  }
+  .iter(length(@contents));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @pair: extract(@contents, @i);
+    @name: extract(@pair, 1);
+    @dir: extract(@pair, 2);
+    .row-@{name}, .column-@{name} {
+      & when not (@name = test) {
+        justify-content: @dir !important;
+      }
+    }
+    .row, .column {
+      & when (@name = test) {
+        justify-content: @dir !important;
+      }
+    }
+  }
+}
+
+.buttons() {
+  @elm: e(@buttonElements);
+  @block: replace(@elm, '(^|\s+)(.+?)(,|$)', '$1$2.btn-block$3', g);
+  @hover: replace(@elm, '(^|\s+)(.+?)(,|$)', '$1$2:hover$3', g);
+  @{elm} {
+    display: inline-block;
+    line-height: 1;
+    padding: unit(@buttonDefSize, px) unit(@buttonDefSize * 2, px);
+    //.buttonColoring();
+  }
+  @{hover} {
+    cursor: pointer;
+    //.buttonColoring(@buttonDefColor,'hover');
+  }
+  @{block} {
+    display: block;
+    width: 100%;
+  }
+  .sizes(length(@buttonSizes));
+  .sizes(@i) when (@i > 0) {
+    .sizes(@i - 1);
+    @sz: extract(@buttonSizes, @i);
+    @n: extract(@sz, 1);
+    @v: extract(@sz, 2);
+    @es: replace(@elm, '(^|\s+)(.+?)(,|$)', '$1$2.btn-@{n}$3', g);
+    @{es} {
+      padding: unit(@v, px) unit(@v * 2, px);
+    }
+  }
+}
+
+.buttonColoring(@color:@buttonDefColor,@mode:'normal') {
+  & when not (@mode = 'hover') {
+    background-color: @color;
+    color: contrast(@color);
+    border: 2px solid lighten(@color, 20%);
+  }
+  & when (@mode = 'hover') {
+    @hove: saturate(@color, 20%);
+    background-color: @hove;
+    color: contrast(@hove);
+    border: 2px solid lighten(@hove, 10%);
   }
 }

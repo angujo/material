@@ -32,6 +32,7 @@ $fullColors     =
             <li><a href="#borders">Borders</a></li>
             <li><a href="#borders">Colors</a></li>
             <li><a href="#cards">Cards</a></li>
+            <li><a href="#rounds">Rounds</a></li>
             <li>
                 <a href="#text">Text</a>
                 <ul>
@@ -73,6 +74,42 @@ $fullColors     =
         </ul>
     </nav>
     <main role="main">
+        <section id="buttons">
+            <h3>Buttons</h3>
+            <div class="row align-center button-sizes stretch">
+                <?php $btnCol = $fullColors;
+                shuffle($btnCol);
+                $btnCol = array_slice($btnCol, 0, 20); ?>
+                <?php foreach ($btnCol as $item) { ?>
+                <button class="btn-<?= $item; ?> margin-bottom-small"><code>.btn-<?= $item; ?></code></button><?php } ?>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <input type="button" value="input[type=button]" class="btn-success">
+                    <div>
+                        <code>input[type=button]</code>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-bottom button-sizes">
+                <button class="btn-tiny btn-info">Tiny</button>
+                <button class="btn-small btn-success">Small</button>
+                <button class="btn-medium btn-warning">Medium</button>
+                <button class="btn-large btn-danger">Large</button>
+                <button class="btn-xlarge btn-primary">X-Large</button>
+            </div>
+        </section>
+        <section id="rounds">
+            <h3>Round Corners</h3>
+            <?php $mediums = ['small', 'medium', 'large', 'xlarge', 'circle']; ?>
+            <div class="row">
+                <?php foreach ($mediums as $medium) { ?>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="round-<?= $medium; ?> bg-green-dark"><p><code>.round-<?= $medium; ?></code></p></div>
+                    </div>
+                <?php } ?>
+            </div>
+        </section>
         <section id="cards">
             <h3>Cards</h3>
             <div class="row">
@@ -85,6 +122,27 @@ $fullColors     =
                         <footer>
                             Some footer
                         </footer>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="card-blue-dark">
+                        <header><h3>Card 101</h3></header>
+                        <section>
+                            <p>Content based card layout. <code>.card-blue-dark</code></p>
+                        </section>
+                        <div class="button-group">
+                            <a class="btn btn-success">Save</a>
+                            <a class="btn btn-warning">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="card-blue-dark">
+                        <header><h3>Card 101</h3></header>
+                        <section>
+                            <p>Content based card layout. <code>.card-blue-dark</code></p>
+                        </section>
+                        <a class="btn btn-default">&plus; Load</a>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-3">
