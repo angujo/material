@@ -1,7 +1,6 @@
 [class^='col-'], [col*='col-'] {
     padding: .5rem;
     border: 1px solid #ccc;
-    text-align: center;
 }
 
 .colors p {

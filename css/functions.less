@@ -255,6 +255,13 @@
       background: @value;
       color: contrast(@value);
     }
+    .btn-border-@{key} {
+      border: 1px solid @value;
+      background: none;
+      &:hover {
+        box-shadow: 1px 1px 3px @value;
+      }
+    }
     .btn-@{key} {
       .buttonColoring(@value);
       &:hover {
@@ -276,6 +283,11 @@
       font-size: unit(@max-font-size - (@i+2), px);
       margin-top: unit(18 - (@i), px);
       margin-bottom: unit(18 - (@i), px);
+      small {
+        display: block;
+        font-size: unit((@max-font-size - (@i+2))/2, px);
+        color: @defColor;
+      }
     }
   }
 }
@@ -402,5 +414,231 @@
     background-color: @hove;
     color: contrast(@hove);
     border: 2px solid lighten(@hove, 10%);
+  }
+}
+
+.tables() {
+  @defColor: #e4e4e4;
+  table {
+    border-collapse: collapse;
+    .thead();
+    .tbody;
+    th, td {
+      padding: unit(@spacing/2, px) unit(@spacing, px);
+      font-size: unit(@spacing, px);
+      text-align: left;
+    }
+    &.tiny {
+      @sp: @spacing - 3;
+      th, td {
+        padding: unit(@sp/2, px) unit(@sp, px);
+        font-size: unit(@sp, px);
+      }
+    }
+    &.small {
+      @sp: @spacing - 1.5;
+      th, td {
+        padding: unit(@sp/2, px) unit(@sp, px);
+        font-size: unit(@sp, px);
+      }
+    }
+    &.large {
+      @sp: @spacing + 5;
+      th, td {
+        padding: unit(@sp/2, px) unit(@sp, px);
+        font-size: unit(@sp, px);
+      }
+    }
+    &.xlarge {
+      @sp: @spacing + 8;
+      th, td {
+        padding: unit(@sp/2, px) unit(@sp, px);
+        font-size: unit(@sp, px);
+      }
+    }
+    .thead() {
+      thead th, thead td, th {
+        font-weight: bold;
+      }
+    }
+    .tbody() {
+      tbody td, tbody th {
+      }
+      &.striped {
+        tbody tr:nth-child(odd) {
+          background-color: @defColor;
+          color: contrast(@defColor);
+        }
+        tr:nth-child(even) {
+        }
+      }
+      &.bordered {
+        td, th {
+          border: 1px solid @defColor;
+        }
+      }
+      &.bordered-rows {
+        td, th {
+          border-bottom: 1px solid @defColor;
+        }
+      }
+      &.hover {
+        tbody tr:hover {
+          background-color: @defColor;
+        }
+        &.striped {
+          tbody tr:hover {
+            background-color: darken(@defColor, 20%);
+          }
+        }
+      }
+    }
+    .iter(length(@color-group));
+  }
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @pair: extract(@color-group, @i);
+    @name: extract(@pair, 1);
+    @value: extract(@pair, 2);
+    @c: @value; // darken(@value, 20%, relative);
+    &.table-@{name} {
+      border: .2px solid @c;
+      thead {
+        background-color: @c;
+        th, td {
+          color: contrast(@c) !important;
+        }
+      }
+      &.bordered {
+        td, th {
+          border: 1px solid @c;
+        }
+      }
+      &.bordered-rows {
+        td, th {
+          border-bottom: 1px solid @c;
+        }
+      }
+      &.hover {
+        tbody tr:hover {
+          background-color: lighten(@c, 10%);
+        }
+        &.striped {
+          tbody tr:hover {
+            background-color: lighten(@c, 50%);
+            td, th {
+              color: contrast(lighten(@c, 50%));
+            }
+          }
+        }
+      }
+    }
+    tr.@{name} {
+      background-color: lighten(@c, 50%);
+      td, th {
+        color: contrast(lighten(@c, 50%));
+      }
+    }
+  }
+}
+
+.lists() {
+  ul {
+    &.list-group {
+      > li {
+        display: flex;
+        margin-bottom: unit(@spacing/3, px);
+        border-bottom: 1px solid @defColor;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        position: relative;
+        align-items: center;
+        header, section, footer, .button-group {
+          padding: unit(@spacing/2, px) unit(@spacing, px);
+          width: 100%;
+        }
+        header, footer {
+          background-color: lighten(@defColor, 30%);
+        }
+        header {
+          font-weight: bold;
+        }
+        section {
+        }
+        footer {
+        }
+        > .button-group {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: stretch;
+          justify-content: space-between;
+          > * {
+            flex-grow: 1;
+            margin-left: 5px;
+            margin-right: 5px;
+            &:first-child {
+              margin-left: 0;
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+        > button, > input[type=reset], > input[type=submit], > input[type=button], > [class^='btn-'], > [class*='btn-'] {
+          display: block !important;
+          width: 100%;
+        }
+        > img, > figure {
+          width: 20%;
+          border-radius: 50%;
+          & ~ * {
+            width: 80%;
+            padding: 0;
+          }
+        }
+        > figure {
+          padding: 0;
+          margin: 0;
+          img {
+            width: 100%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+          }
+          figcaption {
+            text-align: center;
+            width: 100%;
+            display: block;
+            padding: unit(@spacing/3, px) unit(@spacing/2, px);
+          }
+        }
+      }
+      .iter(length(@color-group));
+      .iter(@i) when (@i > 0) {
+        .iter(@i - 1);
+        @pair: extract(@color-group, @i);
+        @name: extract(@pair, 1);
+        @value: extract(@pair, 2);
+        &.list-@{name} {
+          li {
+            header, footer {
+              background-color: lighten(@value, 40%);
+              color: contrast(lighten(@value, 40%));
+            }
+          }
+        }
+      }
+    }
+    &:not(.default) {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    &.inline {
+      li {
+        display: inline-block;
+        padding: 3px 6px;
+      }
+    }
   }
 }

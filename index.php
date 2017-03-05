@@ -74,18 +74,1067 @@ $fullColors     =
         </ul>
     </nav>
     <main role="main">
+        <section id="lists">
+            <ul class="default">
+                <li><code>.default</code></li>
+                <li>Lara, Randall P.</li>
+                <li>tortor.nibh@nonummyFusce.edu</li>
+                <li>P.O. Box 461, 9181 Nostra, Street</li>
+                <li>Dapibus Id Ltd</li>
+            </ul>
+            <hr/>
+            <ul>
+                <li>Default</li>
+                <li>Lara, Randall P.</li>
+                <li>tortor.nibh@nonummyFusce.edu</li>
+                <li>P.O. Box 461, 9181 Nostra, Street</li>
+                <li>Dapibus Id Ltd</li>
+            </ul>
+            <hr/>
+            <ul class="inline">
+                <li><code>.inline</code></li>
+                <li>Lara, Randall P.</li>
+                <li>tortor.nibh@nonummyFusce.edu</li>
+                <li>P.O. Box 461, 9181 Nostra, Street</li>
+                <li>Dapibus Id Ltd</li>
+            </ul>
+            <hr/>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <ul class="list-group">
+                        <li>
+                            <header>John doe Smith</header>
+                            <section>
+                                Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                prensionem
+                                nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                            </section>
+                            <footer>
+                                Footer Here
+                            </footer>
+                        </li>
+                        <li>
+                            <header>James Smith</header>
+                            <section>
+                                Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                prensionem
+                                nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                            </section>
+                            <button class="btn-default">
+                                Click for more ...
+                            </button>
+                        </li>
+                        <li>
+                            <header>Jane doe Smith</header>
+                            <section>
+                                Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                prensionem
+                                nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                            </section>
+                            <div class="button-group">
+                                <button class="btn-info">Details</button>
+                                <button class="btn-success">Save</button>
+                                <button class="btn-warning">Delete</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6"></div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <ul class="list-group list-success">
+                        <li>
+                            <header>John doe Smith</header>
+                            <section>
+                                Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                prensionem
+                                nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                            </section>
+                            <footer>
+                                Footer Here
+                            </footer>
+                        </li>
+                        <li>
+                            <header>Jane doe Smith</header>
+                            <section>
+                                Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                prensionem
+                                nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                            </section>
+                            <footer>
+                                Footer Here
+                            </footer>
+                        </li>
+                        <li>
+                            <header>James mcSmith</header>
+                            <section>
+                                Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                prensionem
+                                nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                            </section>
+                            <footer>
+                                Footer Here
+                            </footer>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6"></div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <ul class="list-group list-success">
+                        <li>
+                            <img src="img/oldman.png">
+                            <section>
+                                <header>John doe Smith</header>
+                                <section>
+                                    Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                    prensionem
+                                    nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                                </section>
+                                <footer>
+                                    Footer Here
+                                </footer>
+                            </section>
+                        </li>
+                        <li>
+                            <img src="img/matureman.png">
+                            <section>
+                                <section>
+                                    <b>John Smith Doe</b><br/>
+                                    Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                    prensionem
+                                    nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                                </section>
+                            </section>
+                        </li>
+                        <li>
+                            <figure><img src="img/supportfemale.png"><figcaption>Jane Doe</figcaption></figure>
+                            <section>
+                                <header>Born: 23rd, May, 1987</header>
+                                <section>
+                                    Rationes potus in ferox lentia!Decors crescere, tanquam albus amor.Experimentum cito ducunt ad neuter lanista.Aonides grandis clinias est.Tata de mirabilis fermium,
+                                    prensionem
+                                    nomen!Salvus eleates etiam gratias homo est.Demolitiones prarere in tubinga!Est emeritis brabeuta, cesaris.
+                                </section>
+                                <footer>
+                                    Footer Here
+                                </footer>
+                            </section>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6"></div>
+            </div>
+            <hr/>
+        </section>
+        <section id="tables">
+            <h3>Tables</h3>
+            <table class="table-success">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Welch, Mercedes Z.</td>
+                    <td>eget.magna@scelerisquenequeNullam.edu</td>
+                    <td>Ap #293-399 Faucibus Road</td>
+                    <td>Rutrum Eu Ultrices Company</td>
+                </tr>
+                <tr>
+                    <td>Miller, Nomlanga L.</td>
+                    <td>imperdiet@nisidictumaugue.edu</td>
+                    <td>Ap #666-3154 Molestie Street</td>
+                    <td>Mauris Limited</td>
+                </tr>
+                <tr>
+                    <td>Decker, Dacey P.</td>
+                    <td>nisl@odiovel.org</td>
+                    <td>P.O. Box 257, 7847 Elit. Ave</td>
+                    <td>Nullam Nisl Foundation</td>
+                </tr>
+                <tr>
+                    <td>Albert, Melodie A.</td>
+                    <td>magnis@etrutrum.net</td>
+                    <td>984 In, Street</td>
+                    <td>Vestibulum Ante Associates</td>
+                </tr>
+                <tr>
+                    <td>Brown, Rajah Y.</td>
+                    <td>odio.Aliquam@urnaconvallis.ca</td>
+                    <td>528-4562 Morbi Avenue</td>
+                    <td>Neque Sed LLC</td>
+                </tr>
+                <tr>
+                    <td>Montgomery, Athena W.</td>
+                    <td>eu.ultrices@lacusvarius.org</td>
+                    <td>Ap #797-9238 Ante. St.</td>
+                    <td>Magna PC</td>
+                </tr>
+                <tr>
+                    <td>Livingston, Carlos E.</td>
+                    <td>Nunc.commodo@Donecfelis.net</td>
+                    <td>Ap #152-1406 Nec, Road</td>
+                    <td>Luctus Et Corporation</td>
+                </tr>
+                <tr>
+                    <td>Rivera, Cassady G.</td>
+                    <td>Nunc.mauris.elit@diamvel.com</td>
+                    <td>260-4651 Eu Ave</td>
+                    <td>Ipsum Suspendisse Institute</td>
+                </tr>
+                <tr>
+                    <td>Gonzalez, Mechelle F.</td>
+                    <td>Nullam.vitae.diam@milorem.edu</td>
+                    <td>Ap #560-6633 Nullam Street</td>
+                    <td>Blandit Ltd</td>
+                </tr>
+                <tr>
+                    <td>Vargas, Yoshi Y.</td>
+                    <td>at@ultrices.com</td>
+                    <td>8984 Diam. Road</td>
+                    <td>Tellus Imperdiet Non Corp.</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Welch, Mercedes Z.</td>
+                    <td>eget.magna@scelerisquenequeNullam.edu</td>
+                    <td>Ap #293-399 Faucibus Road</td>
+                    <td>Rutrum Eu Ultrices Company</td>
+                </tr>
+                <tr>
+                    <td>Miller, Nomlanga L.</td>
+                    <td>imperdiet@nisidictumaugue.edu</td>
+                    <td>Ap #666-3154 Molestie Street</td>
+                    <td>Mauris Limited</td>
+                </tr>
+                <tr>
+                    <td>Decker, Dacey P.</td>
+                    <td>nisl@odiovel.org</td>
+                    <td>P.O. Box 257, 7847 Elit. Ave</td>
+                    <td>Nullam Nisl Foundation</td>
+                </tr>
+                <tr>
+                    <td>Albert, Melodie A.</td>
+                    <td>magnis@etrutrum.net</td>
+                    <td>984 In, Street</td>
+                    <td>Vestibulum Ante Associates</td>
+                </tr>
+                <tr>
+                    <td>Brown, Rajah Y.</td>
+                    <td>odio.Aliquam@urnaconvallis.ca</td>
+                    <td>528-4562 Morbi Avenue</td>
+                    <td>Neque Sed LLC</td>
+                </tr>
+                <tr>
+                    <td>Montgomery, Athena W.</td>
+                    <td>eu.ultrices@lacusvarius.org</td>
+                    <td>Ap #797-9238 Ante. St.</td>
+                    <td>Magna PC</td>
+                </tr>
+                <tr>
+                    <td>Livingston, Carlos E.</td>
+                    <td>Nunc.commodo@Donecfelis.net</td>
+                    <td>Ap #152-1406 Nec, Road</td>
+                    <td>Luctus Et Corporation</td>
+                </tr>
+                <tr>
+                    <td>Rivera, Cassady G.</td>
+                    <td>Nunc.mauris.elit@diamvel.com</td>
+                    <td>260-4651 Eu Ave</td>
+                    <td>Ipsum Suspendisse Institute</td>
+                </tr>
+                <tr>
+                    <td>Gonzalez, Mechelle F.</td>
+                    <td>Nullam.vitae.diam@milorem.edu</td>
+                    <td>Ap #560-6633 Nullam Street</td>
+                    <td>Blandit Ltd</td>
+                </tr>
+                <tr>
+                    <td>Vargas, Yoshi Y.</td>
+                    <td>at@ultrices.com</td>
+                    <td>8984 Diam. Road</td>
+                    <td>Tellus Imperdiet Non Corp.</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <table class="bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Welch, Mercedes Z.</td>
+                    <td>eget.magna@scelerisquenequeNullam.edu</td>
+                    <td>Ap #293-399 Faucibus Road</td>
+                    <td>Rutrum Eu Ultrices Company</td>
+                </tr>
+                <tr>
+                    <td>Miller, Nomlanga L.</td>
+                    <td>imperdiet@nisidictumaugue.edu</td>
+                    <td>Ap #666-3154 Molestie Street</td>
+                    <td>Mauris Limited</td>
+                </tr>
+                <tr>
+                    <td>Decker, Dacey P.</td>
+                    <td>nisl@odiovel.org</td>
+                    <td>P.O. Box 257, 7847 Elit. Ave</td>
+                    <td>Nullam Nisl Foundation</td>
+                </tr>
+                <tr>
+                    <td>Albert, Melodie A.</td>
+                    <td>magnis@etrutrum.net</td>
+                    <td>984 In, Street</td>
+                    <td>Vestibulum Ante Associates</td>
+                </tr>
+                <tr>
+                    <td>Brown, Rajah Y.</td>
+                    <td>odio.Aliquam@urnaconvallis.ca</td>
+                    <td>528-4562 Morbi Avenue</td>
+                    <td>Neque Sed LLC</td>
+                </tr>
+                <tr>
+                    <td>Montgomery, Athena W.</td>
+                    <td>eu.ultrices@lacusvarius.org</td>
+                    <td>Ap #797-9238 Ante. St.</td>
+                    <td>Magna PC</td>
+                </tr>
+                <tr>
+                    <td>Livingston, Carlos E.</td>
+                    <td>Nunc.commodo@Donecfelis.net</td>
+                    <td>Ap #152-1406 Nec, Road</td>
+                    <td>Luctus Et Corporation</td>
+                </tr>
+                <tr>
+                    <td>Rivera, Cassady G.</td>
+                    <td>Nunc.mauris.elit@diamvel.com</td>
+                    <td>260-4651 Eu Ave</td>
+                    <td>Ipsum Suspendisse Institute</td>
+                </tr>
+                <tr>
+                    <td>Gonzalez, Mechelle F.</td>
+                    <td>Nullam.vitae.diam@milorem.edu</td>
+                    <td>Ap #560-6633 Nullam Street</td>
+                    <td>Blandit Ltd</td>
+                </tr>
+                <tr>
+                    <td>Vargas, Yoshi Y.</td>
+                    <td>at@ultrices.com</td>
+                    <td>8984 Diam. Road</td>
+                    <td>Tellus Imperdiet Non Corp.</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <table class="hover striped bordered table-info">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Welch, Mercedes Z.</td>
+                    <td>eget.magna@scelerisquenequeNullam.edu</td>
+                    <td>Ap #293-399 Faucibus Road</td>
+                    <td>Rutrum Eu Ultrices Company</td>
+                </tr>
+                <tr>
+                    <td>Miller, Nomlanga L.</td>
+                    <td>imperdiet@nisidictumaugue.edu</td>
+                    <td>Ap #666-3154 Molestie Street</td>
+                    <td>Mauris Limited</td>
+                </tr>
+                <tr>
+                    <td>Decker, Dacey P.</td>
+                    <td>nisl@odiovel.org</td>
+                    <td>P.O. Box 257, 7847 Elit. Ave</td>
+                    <td>Nullam Nisl Foundation</td>
+                </tr>
+                <tr>
+                    <td>Albert, Melodie A.</td>
+                    <td>magnis@etrutrum.net</td>
+                    <td>984 In, Street</td>
+                    <td>Vestibulum Ante Associates</td>
+                </tr>
+                <tr>
+                    <td>Brown, Rajah Y.</td>
+                    <td>odio.Aliquam@urnaconvallis.ca</td>
+                    <td>528-4562 Morbi Avenue</td>
+                    <td>Neque Sed LLC</td>
+                </tr>
+                <tr>
+                    <td>Montgomery, Athena W.</td>
+                    <td>eu.ultrices@lacusvarius.org</td>
+                    <td>Ap #797-9238 Ante. St.</td>
+                    <td>Magna PC</td>
+                </tr>
+                <tr>
+                    <td>Livingston, Carlos E.</td>
+                    <td>Nunc.commodo@Donecfelis.net</td>
+                    <td>Ap #152-1406 Nec, Road</td>
+                    <td>Luctus Et Corporation</td>
+                </tr>
+                <tr>
+                    <td>Rivera, Cassady G.</td>
+                    <td>Nunc.mauris.elit@diamvel.com</td>
+                    <td>260-4651 Eu Ave</td>
+                    <td>Ipsum Suspendisse Institute</td>
+                </tr>
+                <tr>
+                    <td>Gonzalez, Mechelle F.</td>
+                    <td>Nullam.vitae.diam@milorem.edu</td>
+                    <td>Ap #560-6633 Nullam Street</td>
+                    <td>Blandit Ltd</td>
+                </tr>
+                <tr>
+                    <td>Vargas, Yoshi Y.</td>
+                    <td>at@ultrices.com</td>
+                    <td>8984 Diam. Road</td>
+                    <td>Tellus Imperdiet Non Corp.</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <table class="bordered-rows table-success">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Welch, Mercedes Z.</td>
+                    <td>eget.magna@scelerisquenequeNullam.edu</td>
+                    <td>Ap #293-399 Faucibus Road</td>
+                    <td>Rutrum Eu Ultrices Company</td>
+                </tr>
+                <tr>
+                    <td>Miller, Nomlanga L.</td>
+                    <td>imperdiet@nisidictumaugue.edu</td>
+                    <td>Ap #666-3154 Molestie Street</td>
+                    <td>Mauris Limited</td>
+                </tr>
+                <tr>
+                    <td>Decker, Dacey P.</td>
+                    <td>nisl@odiovel.org</td>
+                    <td>P.O. Box 257, 7847 Elit. Ave</td>
+                    <td>Nullam Nisl Foundation</td>
+                </tr>
+                <tr>
+                    <td>Albert, Melodie A.</td>
+                    <td>magnis@etrutrum.net</td>
+                    <td>984 In, Street</td>
+                    <td>Vestibulum Ante Associates</td>
+                </tr>
+                <tr>
+                    <td>Brown, Rajah Y.</td>
+                    <td>odio.Aliquam@urnaconvallis.ca</td>
+                    <td>528-4562 Morbi Avenue</td>
+                    <td>Neque Sed LLC</td>
+                </tr>
+                <tr>
+                    <td>Montgomery, Athena W.</td>
+                    <td>eu.ultrices@lacusvarius.org</td>
+                    <td>Ap #797-9238 Ante. St.</td>
+                    <td>Magna PC</td>
+                </tr>
+                <tr>
+                    <td>Livingston, Carlos E.</td>
+                    <td>Nunc.commodo@Donecfelis.net</td>
+                    <td>Ap #152-1406 Nec, Road</td>
+                    <td>Luctus Et Corporation</td>
+                </tr>
+                <tr>
+                    <td>Rivera, Cassady G.</td>
+                    <td>Nunc.mauris.elit@diamvel.com</td>
+                    <td>260-4651 Eu Ave</td>
+                    <td>Ipsum Suspendisse Institute</td>
+                </tr>
+                <tr>
+                    <td>Gonzalez, Mechelle F.</td>
+                    <td>Nullam.vitae.diam@milorem.edu</td>
+                    <td>Ap #560-6633 Nullam Street</td>
+                    <td>Blandit Ltd</td>
+                </tr>
+                <tr>
+                    <td>Vargas, Yoshi Y.</td>
+                    <td>at@ultrices.com</td>
+                    <td>8984 Diam. Road</td>
+                    <td>Tellus Imperdiet Non Corp.</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <table>
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                </tr>
+                <tr class="success">
+                    <td>Welch, Mercedes Z.</td>
+                    <td>eget.magna@scelerisquenequeNullam.edu</td>
+                    <td>Ap #293-399 Faucibus Road</td>
+                    <td>Rutrum Eu Ultrices Company</td>
+                </tr>
+                <tr class="info">
+                    <td>Miller, Nomlanga L.</td>
+                    <td>imperdiet@nisidictumaugue.edu</td>
+                    <td>Ap #666-3154 Molestie Street</td>
+                    <td>Mauris Limited</td>
+                </tr>
+                <tr class="warning">
+                    <td>Decker, Dacey P.</td>
+                    <td>nisl@odiovel.org</td>
+                    <td>P.O. Box 257, 7847 Elit. Ave</td>
+                    <td>Nullam Nisl Foundation</td>
+                </tr>
+                <tr class="danger">
+                    <td>Albert, Melodie A.</td>
+                    <td>magnis@etrutrum.net</td>
+                    <td>984 In, Street</td>
+                    <td>Vestibulum Ante Associates</td>
+                </tr>
+                <tr class="primary">
+                    <td>Brown, Rajah Y.</td>
+                    <td>odio.Aliquam@urnaconvallis.ca</td>
+                    <td>528-4562 Morbi Avenue</td>
+                    <td>Neque Sed LLC</td>
+                </tr>
+                <tr>
+                    <td>Montgomery, Athena W.</td>
+                    <td>eu.ultrices@lacusvarius.org</td>
+                    <td>Ap #797-9238 Ante. St.</td>
+                    <td>Magna PC</td>
+                </tr>
+                <tr>
+                    <td>Livingston, Carlos E.</td>
+                    <td>Nunc.commodo@Donecfelis.net</td>
+                    <td>Ap #152-1406 Nec, Road</td>
+                    <td>Luctus Et Corporation</td>
+                </tr>
+                <tr>
+                    <td>Rivera, Cassady G.</td>
+                    <td>Nunc.mauris.elit@diamvel.com</td>
+                    <td>260-4651 Eu Ave</td>
+                    <td>Ipsum Suspendisse Institute</td>
+                </tr>
+                <tr>
+                    <td>Gonzalez, Mechelle F.</td>
+                    <td>Nullam.vitae.diam@milorem.edu</td>
+                    <td>Ap #560-6633 Nullam Street</td>
+                    <td>Blandit Ltd</td>
+                </tr>
+                <tr>
+                    <td>Vargas, Yoshi Y.</td>
+                    <td>at@ultrices.com</td>
+                    <td>8984 Diam. Road</td>
+                    <td>Tellus Imperdiet Non Corp.</td>
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <table class="tiny">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Welch, Mercedes Z.</td>
+                            <td>eget.magna@scelerisquenequeNullam.edu</td>
+                            <td>Ap #293-399 Faucibus Road</td>
+                            <td>Rutrum Eu Ultrices Company</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Nomlanga L.</td>
+                            <td>imperdiet@nisidictumaugue.edu</td>
+                            <td>Ap #666-3154 Molestie Street</td>
+                            <td>Mauris Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Decker, Dacey P.</td>
+                            <td>nisl@odiovel.org</td>
+                            <td>P.O. Box 257, 7847 Elit. Ave</td>
+                            <td>Nullam Nisl Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>Albert, Melodie A.</td>
+                            <td>magnis@etrutrum.net</td>
+                            <td>984 In, Street</td>
+                            <td>Vestibulum Ante Associates</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rajah Y.</td>
+                            <td>odio.Aliquam@urnaconvallis.ca</td>
+                            <td>528-4562 Morbi Avenue</td>
+                            <td>Neque Sed LLC</td>
+                        </tr>
+                        <tr>
+                            <td>Montgomery, Athena W.</td>
+                            <td>eu.ultrices@lacusvarius.org</td>
+                            <td>Ap #797-9238 Ante. St.</td>
+                            <td>Magna PC</td>
+                        </tr>
+                        <tr>
+                            <td>Livingston, Carlos E.</td>
+                            <td>Nunc.commodo@Donecfelis.net</td>
+                            <td>Ap #152-1406 Nec, Road</td>
+                            <td>Luctus Et Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>Rivera, Cassady G.</td>
+                            <td>Nunc.mauris.elit@diamvel.com</td>
+                            <td>260-4651 Eu Ave</td>
+                            <td>Ipsum Suspendisse Institute</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Mechelle F.</td>
+                            <td>Nullam.vitae.diam@milorem.edu</td>
+                            <td>Ap #560-6633 Nullam Street</td>
+                            <td>Blandit Ltd</td>
+                        </tr>
+                        <tr>
+                            <td>Vargas, Yoshi Y.</td>
+                            <td>at@ultrices.com</td>
+                            <td>8984 Diam. Road</td>
+                            <td>Tellus Imperdiet Non Corp.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <table class="small">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Welch, Mercedes Z.</td>
+                            <td>eget.magna@scelerisquenequeNullam.edu</td>
+                            <td>Ap #293-399 Faucibus Road</td>
+                            <td>Rutrum Eu Ultrices Company</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Nomlanga L.</td>
+                            <td>imperdiet@nisidictumaugue.edu</td>
+                            <td>Ap #666-3154 Molestie Street</td>
+                            <td>Mauris Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Decker, Dacey P.</td>
+                            <td>nisl@odiovel.org</td>
+                            <td>P.O. Box 257, 7847 Elit. Ave</td>
+                            <td>Nullam Nisl Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>Albert, Melodie A.</td>
+                            <td>magnis@etrutrum.net</td>
+                            <td>984 In, Street</td>
+                            <td>Vestibulum Ante Associates</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rajah Y.</td>
+                            <td>odio.Aliquam@urnaconvallis.ca</td>
+                            <td>528-4562 Morbi Avenue</td>
+                            <td>Neque Sed LLC</td>
+                        </tr>
+                        <tr>
+                            <td>Montgomery, Athena W.</td>
+                            <td>eu.ultrices@lacusvarius.org</td>
+                            <td>Ap #797-9238 Ante. St.</td>
+                            <td>Magna PC</td>
+                        </tr>
+                        <tr>
+                            <td>Livingston, Carlos E.</td>
+                            <td>Nunc.commodo@Donecfelis.net</td>
+                            <td>Ap #152-1406 Nec, Road</td>
+                            <td>Luctus Et Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>Rivera, Cassady G.</td>
+                            <td>Nunc.mauris.elit@diamvel.com</td>
+                            <td>260-4651 Eu Ave</td>
+                            <td>Ipsum Suspendisse Institute</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Mechelle F.</td>
+                            <td>Nullam.vitae.diam@milorem.edu</td>
+                            <td>Ap #560-6633 Nullam Street</td>
+                            <td>Blandit Ltd</td>
+                        </tr>
+                        <tr>
+                            <td>Vargas, Yoshi Y.</td>
+                            <td>at@ultrices.com</td>
+                            <td>8984 Diam. Road</td>
+                            <td>Tellus Imperdiet Non Corp.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Welch, Mercedes Z.</td>
+                            <td>eget.magna@scelerisquenequeNullam.edu</td>
+                            <td>Ap #293-399 Faucibus Road</td>
+                            <td>Rutrum Eu Ultrices Company</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Nomlanga L.</td>
+                            <td>imperdiet@nisidictumaugue.edu</td>
+                            <td>Ap #666-3154 Molestie Street</td>
+                            <td>Mauris Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Decker, Dacey P.</td>
+                            <td>nisl@odiovel.org</td>
+                            <td>P.O. Box 257, 7847 Elit. Ave</td>
+                            <td>Nullam Nisl Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>Albert, Melodie A.</td>
+                            <td>magnis@etrutrum.net</td>
+                            <td>984 In, Street</td>
+                            <td>Vestibulum Ante Associates</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rajah Y.</td>
+                            <td>odio.Aliquam@urnaconvallis.ca</td>
+                            <td>528-4562 Morbi Avenue</td>
+                            <td>Neque Sed LLC</td>
+                        </tr>
+                        <tr>
+                            <td>Montgomery, Athena W.</td>
+                            <td>eu.ultrices@lacusvarius.org</td>
+                            <td>Ap #797-9238 Ante. St.</td>
+                            <td>Magna PC</td>
+                        </tr>
+                        <tr>
+                            <td>Livingston, Carlos E.</td>
+                            <td>Nunc.commodo@Donecfelis.net</td>
+                            <td>Ap #152-1406 Nec, Road</td>
+                            <td>Luctus Et Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>Rivera, Cassady G.</td>
+                            <td>Nunc.mauris.elit@diamvel.com</td>
+                            <td>260-4651 Eu Ave</td>
+                            <td>Ipsum Suspendisse Institute</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Mechelle F.</td>
+                            <td>Nullam.vitae.diam@milorem.edu</td>
+                            <td>Ap #560-6633 Nullam Street</td>
+                            <td>Blandit Ltd</td>
+                        </tr>
+                        <tr>
+                            <td>Vargas, Yoshi Y.</td>
+                            <td>at@ultrices.com</td>
+                            <td>8984 Diam. Road</td>
+                            <td>Tellus Imperdiet Non Corp.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+                    <table class="large">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Welch, Mercedes Z.</td>
+                            <td>eget.magna@scelerisquenequeNullam.edu</td>
+                            <td>Ap #293-399 Faucibus Road</td>
+                            <td>Rutrum Eu Ultrices Company</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Nomlanga L.</td>
+                            <td>imperdiet@nisidictumaugue.edu</td>
+                            <td>Ap #666-3154 Molestie Street</td>
+                            <td>Mauris Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Decker, Dacey P.</td>
+                            <td>nisl@odiovel.org</td>
+                            <td>P.O. Box 257, 7847 Elit. Ave</td>
+                            <td>Nullam Nisl Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>Albert, Melodie A.</td>
+                            <td>magnis@etrutrum.net</td>
+                            <td>984 In, Street</td>
+                            <td>Vestibulum Ante Associates</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rajah Y.</td>
+                            <td>odio.Aliquam@urnaconvallis.ca</td>
+                            <td>528-4562 Morbi Avenue</td>
+                            <td>Neque Sed LLC</td>
+                        </tr>
+                        <tr>
+                            <td>Montgomery, Athena W.</td>
+                            <td>eu.ultrices@lacusvarius.org</td>
+                            <td>Ap #797-9238 Ante. St.</td>
+                            <td>Magna PC</td>
+                        </tr>
+                        <tr>
+                            <td>Livingston, Carlos E.</td>
+                            <td>Nunc.commodo@Donecfelis.net</td>
+                            <td>Ap #152-1406 Nec, Road</td>
+                            <td>Luctus Et Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>Rivera, Cassady G.</td>
+                            <td>Nunc.mauris.elit@diamvel.com</td>
+                            <td>260-4651 Eu Ave</td>
+                            <td>Ipsum Suspendisse Institute</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Mechelle F.</td>
+                            <td>Nullam.vitae.diam@milorem.edu</td>
+                            <td>Ap #560-6633 Nullam Street</td>
+                            <td>Blandit Ltd</td>
+                        </tr>
+                        <tr>
+                            <td>Vargas, Yoshi Y.</td>
+                            <td>at@ultrices.com</td>
+                            <td>8984 Diam. Road</td>
+                            <td>Tellus Imperdiet Non Corp.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+                    <code>.xlarge .table-info</code>
+                    <table class="xlarge table-info">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Welch, Mercedes Z.</td>
+                            <td>eget.magna@scelerisquenequeNullam.edu</td>
+                            <td>Ap #293-399 Faucibus Road</td>
+                            <td>Rutrum Eu Ultrices Company</td>
+                        </tr>
+                        <tr>
+                            <td>Miller, Nomlanga L.</td>
+                            <td>imperdiet@nisidictumaugue.edu</td>
+                            <td>Ap #666-3154 Molestie Street</td>
+                            <td>Mauris Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Decker, Dacey P.</td>
+                            <td>nisl@odiovel.org</td>
+                            <td>P.O. Box 257, 7847 Elit. Ave</td>
+                            <td>Nullam Nisl Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>Albert, Melodie A.</td>
+                            <td>magnis@etrutrum.net</td>
+                            <td>984 In, Street</td>
+                            <td>Vestibulum Ante Associates</td>
+                        </tr>
+                        <tr>
+                            <td>Brown, Rajah Y.</td>
+                            <td>odio.Aliquam@urnaconvallis.ca</td>
+                            <td>528-4562 Morbi Avenue</td>
+                            <td>Neque Sed LLC</td>
+                        </tr>
+                        <tr>
+                            <td>Montgomery, Athena W.</td>
+                            <td>eu.ultrices@lacusvarius.org</td>
+                            <td>Ap #797-9238 Ante. St.</td>
+                            <td>Magna PC</td>
+                        </tr>
+                        <tr>
+                            <td>Livingston, Carlos E.</td>
+                            <td>Nunc.commodo@Donecfelis.net</td>
+                            <td>Ap #152-1406 Nec, Road</td>
+                            <td>Luctus Et Corporation</td>
+                        </tr>
+                        <tr>
+                            <td>Rivera, Cassady G.</td>
+                            <td>Nunc.mauris.elit@diamvel.com</td>
+                            <td>260-4651 Eu Ave</td>
+                            <td>Ipsum Suspendisse Institute</td>
+                        </tr>
+                        <tr>
+                            <td>Gonzalez, Mechelle F.</td>
+                            <td>Nullam.vitae.diam@milorem.edu</td>
+                            <td>Ap #560-6633 Nullam Street</td>
+                            <td>Blandit Ltd</td>
+                        </tr>
+                        <tr>
+                            <td>Vargas, Yoshi Y.</td>
+                            <td>at@ultrices.com</td>
+                            <td>8984 Diam. Road</td>
+                            <td>Tellus Imperdiet Non Corp.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <table>
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Company</th>
+                </tr>
+                <tr>
+                    <td>Welch, Mercedes Z.</td>
+                    <td>eget.magna@scelerisquenequeNullam.edu</td>
+                    <td>Ap #293-399 Faucibus Road</td>
+                    <td>Rutrum Eu Ultrices Company</td>
+                </tr>
+                <tr>
+                    <td>Miller, Nomlanga L.</td>
+                    <td>imperdiet@nisidictumaugue.edu</td>
+                    <td>Ap #666-3154 Molestie Street</td>
+                    <td>Mauris Limited</td>
+                </tr>
+                <tr>
+                    <td>Decker, Dacey P.</td>
+                    <td>nisl@odiovel.org</td>
+                    <td>P.O. Box 257, 7847 Elit. Ave</td>
+                    <td>Nullam Nisl Foundation</td>
+                </tr>
+                <tr>
+                    <td>Albert, Melodie A.</td>
+                    <td>magnis@etrutrum.net</td>
+                    <td>984 In, Street</td>
+                    <td>Vestibulum Ante Associates</td>
+                </tr>
+                <tr>
+                    <td>Brown, Rajah Y.</td>
+                    <td>odio.Aliquam@urnaconvallis.ca</td>
+                    <td>528-4562 Morbi Avenue</td>
+                    <td>Neque Sed LLC</td>
+                </tr>
+                <tr>
+                    <td>Montgomery, Athena W.</td>
+                    <td>eu.ultrices@lacusvarius.org</td>
+                    <td>Ap #797-9238 Ante. St.</td>
+                    <td>Magna PC</td>
+                </tr>
+                <tr>
+                    <td>Livingston, Carlos E.</td>
+                    <td>Nunc.commodo@Donecfelis.net</td>
+                    <td>Ap #152-1406 Nec, Road</td>
+                    <td>Luctus Et Corporation</td>
+                </tr>
+                <tr>
+                    <td>Rivera, Cassady G.</td>
+                    <td>Nunc.mauris.elit@diamvel.com</td>
+                    <td>260-4651 Eu Ave</td>
+                    <td>Ipsum Suspendisse Institute</td>
+                </tr>
+                <tr>
+                    <td>Gonzalez, Mechelle F.</td>
+                    <td>Nullam.vitae.diam@milorem.edu</td>
+                    <td>Ap #560-6633 Nullam Street</td>
+                    <td>Blandit Ltd</td>
+                </tr>
+                <tr>
+                    <td>Vargas, Yoshi Y.</td>
+                    <td>at@ultrices.com</td>
+                    <td>8984 Diam. Road</td>
+                    <td>Tellus Imperdiet Non Corp.</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
         <section id="buttons">
             <h3>Buttons</h3>
             <div class="row align-center button-sizes stretch">
                 <?php $btnCol = $fullColors;
                 shuffle($btnCol);
                 $btnCol = array_slice($btnCol, 0, 20); ?>
+                <button class="btn-success margin-bottom-small"><code>.btn-success</code></button>
                 <button class="btn-primary margin-bottom-small"><code>.btn-primary</code></button>
                 <button class="btn-warning margin-bottom-small"><code>.btn-warning</code></button>
                 <button class="btn-info margin-bottom-small"><code>.btn-info</code></button>
                 <button class="btn-default margin-bottom-small"><code>.btn-default</code></button>
                 <button class="btn-danger margin-bottom-small"><code>.btn-danger</code></button>
                 <button class="btn-primary disabled margin-bottom-small"><code>.btn-danger</code></button>
+            </div>
+            <div class="row align-center button-sizes stretch">
+                <button class="btn-border-success margin-bottom-small"><code>.btn-success</code></button>
+                <button class="btn-border-primary margin-bottom-small"><code>.btn-primary</code></button>
+                <button class="btn-border-warning margin-bottom-small"><code>.btn-warning</code></button>
+                <button class="btn-border-info margin-bottom-small"><code>.btn-info</code></button>
+                <button class="btn-border-default margin-bottom-small"><code>.btn-default</code></button>
+                <button class="btn-border-danger margin-bottom-small"><code>.btn-danger</code></button>
+                <button class="btn-border-primary disabled margin-bottom-small"><code>.btn-danger</code></button>
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
