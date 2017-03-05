@@ -80,8 +80,12 @@ $fullColors     =
                 <?php $btnCol = $fullColors;
                 shuffle($btnCol);
                 $btnCol = array_slice($btnCol, 0, 20); ?>
-                <?php foreach ($btnCol as $item) { ?>
-                <button class="btn-<?= $item; ?> margin-bottom-small"><code>.btn-<?= $item; ?></code></button><?php } ?>
+                <button class="btn-primary margin-bottom-small"><code>.btn-primary</code></button>
+                <button class="btn-warning margin-bottom-small"><code>.btn-warning</code></button>
+                <button class="btn-info margin-bottom-small"><code>.btn-info</code></button>
+                <button class="btn-default margin-bottom-small"><code>.btn-default</code></button>
+                <button class="btn-danger margin-bottom-small"><code>.btn-danger</code></button>
+                <button class="btn-primary disabled margin-bottom-small"><code>.btn-danger</code></button>
             </div>
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">

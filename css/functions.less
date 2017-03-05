@@ -354,6 +354,8 @@
 .buttons() {
   @elm: e(@buttonElements);
   @block: replace(@elm, '(^|\s+)(.+?)(,|$)', '$1$2.btn-block$3', g);
+  @disabled: replace(@elm, '(^|\s+)(.+?)(,|$)', '$1$2.disabled$3 $1$2[disabled]$3', g);
+  @disHover: replace(@elm, '(^|\s+)(.+?)(,|$)', '$1$2.disabled:hover$3 $1$2[disabled]:hover$3', g);
   @hover: replace(@elm, '(^|\s+)(.+?)(,|$)', '$1$2:hover$3', g);
   @{elm} {
     display: inline-block;
@@ -368,6 +370,13 @@
   @{block} {
     display: block;
     width: 100%;
+  }
+  @{disabled} {
+    cursor: not-allowed;
+    .buttonColoring(#7b7b7b);
+  }
+  @{disHover} {
+    .buttonColoring(#7b7b7b, 'hover');
   }
   .sizes(length(@buttonSizes));
   .sizes(@i) when (@i > 0) {
@@ -389,7 +398,7 @@
     border: 2px solid lighten(@color, 20%);
   }
   & when (@mode = 'hover') {
-    @hove: saturate(@color, 20%);
+    @hove: darken(@color, 10%);
     background-color: @hove;
     color: contrast(@hove);
     border: 2px solid lighten(@hove, 10%);
