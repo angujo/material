@@ -29,6 +29,7 @@ $fullColors     =
             <li>
                 <a href="#grids">Grids</a>
             </li>
+            <li><a href="#dropdown">DropDown</a></li>
             <li><a href="#borders">Borders</a></li>
             <li><a href="#borders">Colors</a></li>
             <li><a href="#cards">Cards</a></li>
@@ -74,6 +75,21 @@ $fullColors     =
         </ul>
     </nav>
     <main role="main">
+        <section id="dropdown">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 row-pushed">
+                    <div class="dropdown-hover-default">
+                        <button>Action</button>
+                        <div class="dropdown-content">
+                            <a>Menu Item 1</a>
+                            <a>Menu Item 2</a>
+                            <a>Menu Item 3</a>
+                            <a>Menu Item 4</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="lists">
             <ul class="default">
                 <li><code>.default</code></li>
@@ -212,7 +228,9 @@ $fullColors     =
                             </section>
                         </li>
                         <li>
-                            <figure><img src="img/supportfemale.png"><figcaption>Jane Doe</figcaption></figure>
+                            <figure><img src="img/supportfemale.png">
+                                <figcaption>Jane Doe</figcaption>
+                            </figure>
                             <section>
                                 <header>Born: 23rd, May, 1987</header>
                                 <section>

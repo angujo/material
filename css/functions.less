@@ -55,7 +55,10 @@
         .borderColor(~"@{name}-@{dark}", @darkColor);
         .borderColor(~"@{name}-@{light}", @lightColor);
         .border.border-@{name}-@{light}, .border.border-hover-@{name}-@{light}:hover {
-          border-color: @hsl;
+          border-color: @lightColor;
+        }
+        .border.border-@{name}-@{dark}, .border.border-hover-@{name}-@{dark}:hover {
+          border-color: @darkColor;
         }
         .btn-@{name}-@{light} {
           .buttonColoring(@lightColor);
@@ -70,6 +73,12 @@
           }
         }
       }
+      .text-@{name}-@{light}, .text-hover-@{name}-@{light}:hover {
+        color: @lightColor;
+      }
+      .text-@{name}-@{dark}, .text-hover-@{name}-@{dark}:hover {
+        color: @darkColor;
+      }
     }
     .bg-@{name} {
       background-color: darken(@hsl, 0);
@@ -78,7 +87,7 @@
     .btn-@{name} {
       .buttonColoring(@hsl);
     }
-    .border-@{name} {
+    .border-@{name}, .border.border-hover-@{name}:hover {
       border-color: @hsl;
     }
     .borderColor(@name, darken(@hsl, 0));
@@ -404,16 +413,19 @@
 }
 
 .buttonColoring(@color:@buttonDefColor,@mode:'normal') {
+  & {
+    border: 0;
+  }
   & when not (@mode = 'hover') {
     background-color: @color;
     color: contrast(@color);
-    border: 2px solid lighten(@color, 20%);
+    // border: 2px solid lighten(@color, 20%);
   }
   & when (@mode = 'hover') {
     @hove: darken(@color, 10%);
     background-color: @hove;
     color: contrast(@hove);
-    border: 2px solid lighten(@hove, 10%);
+    // border: 2px solid lighten(@hove, 10%);
   }
 }
 
@@ -638,6 +650,49 @@
       li {
         display: inline-block;
         padding: 3px 6px;
+      }
+    }
+  }
+}
+
+.dropDown() {
+  [class*='dropdown-hover-']:hover, [class^='dropdown-hover-']:hover {
+    .dropdown-content {
+      display: block;
+      > *:hover {
+        background: lighten(@defColor, 30%);
+        color: contrast(lighten(@defColor, 30%));
+      }
+    }
+  }
+  [class*='dropdown-hover-'].right:hover, [class^='dropdown-hover-'].right:hover {
+    .dropdown-content {
+      right: 0;
+    }
+  }
+  .row-pushed {
+    [class*='dropdown-hover-'].right:hover, [class^='dropdown-hover-'].right:hover,
+    [class*='dropdown-hover-']:last-child:hover, [class^='dropdown-hover-']:last-child:hover {
+      .dropdown-content {
+        right: 0;
+        left:auto;
+      }
+    }
+  }
+  [class*='dropdown-'], [class^='dropdown-'] {
+    display: inline-block;
+    position: relative;
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      left: 0;
+      box-shadow: 0 0 3px #000;
+      > * {
+        min-width: 200px;
+        display: block;
+        width: 100%;
+        padding: unit(@spacing/2, px) unit(@spacing, px);
       }
     }
   }
