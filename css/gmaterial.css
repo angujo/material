@@ -369,45 +369,43 @@ textarea:not(.default):focus,
 select:focus {
   border-bottom: 1.5px solid #3f9918;
 }
-[class*='dropdown-hover-']:hover .dropdown-content,
-[class^='dropdown-hover-']:hover .dropdown-content {
-  display: block;
-}
-[class*='dropdown-hover-']:hover .dropdown-content > *:hover,
-[class^='dropdown-hover-']:hover .dropdown-content > *:hover {
-  background: #eaeaea;
-  color: #000000;
-}
-[class*='dropdown-hover-'].right:hover .dropdown-content,
-[class^='dropdown-hover-'].right:hover .dropdown-content {
-  right: 0;
-}
-.row-pushed [class*='dropdown-hover-'].right:hover .dropdown-content,
-.row-pushed [class^='dropdown-hover-'].right:hover .dropdown-content,
-.row-pushed [class*='dropdown-hover-']:last-child:hover .dropdown-content,
-.row-pushed [class^='dropdown-hover-']:last-child:hover .dropdown-content {
-  right: 0;
-  left: auto;
-}
-[class*='dropdown-'],
-[class^='dropdown-'] {
+.dropdown,
+.dropdown-hover {
   display: inline-block;
   position: relative;
 }
-[class*='dropdown-'] .dropdown-content,
-[class^='dropdown-'] .dropdown-content {
+.dropdown .dropdown-content,
+.dropdown-hover .dropdown-content {
   display: none;
   position: absolute;
   background: #fff;
   left: 0;
+  right: auto;
   box-shadow: 0 0 3px #000;
 }
-[class*='dropdown-'] .dropdown-content > *,
-[class^='dropdown-'] .dropdown-content > * {
+.dropdown .dropdown-content > *,
+.dropdown-hover .dropdown-content > * {
   min-width: 200px;
   display: block;
   width: 100%;
   padding: 7.5px 15px;
+}
+.dropdown.active .dropdown-content,
+.dropdown-hover:hover .dropdown-content {
+  display: block;
+}
+.dropdown.active .dropdown-content > *:hover,
+.dropdown-hover:hover .dropdown-content > *:hover {
+  background: #eaeaea;
+  color: #000000;
+}
+.dropdown.active.right .dropdown-content,
+.dropdown-hover.right:hover .dropdown-content,
+.dropdown-hover:last-child:not(:first-child):hover .dropdown-content,
+.row-pushed .dropdown-hover:only-child:hover .dropdown-content,
+.row-pushed .dropdown-hover:last-child:not(:only-child):hover .dropdown-content {
+  right: 0;
+  left: auto;
 }
 .border {
   border: medium solid;

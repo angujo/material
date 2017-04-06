@@ -1,0 +1,132 @@
+@grids: xs, sm, md, lg;
+@column-prefix: col;
+@col-count: 12;
+@contents: test flex-start, pushed flex-end, ends space-between, spaced space-around, center center;
+
+.rowColumns() {
+  @rows: replace(replace(~"@{contents}", '(^|\s)([a-z]+)(\s+)([a-z\-]+)(,|$)', '$1.row-$2$5', g), '-test', '');
+  @columns: replace(~"@{rows}", 'row', 'column', g);
+  @rc: ~"@{rows}, @{columns}";
+  @nw: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.no-wrap$2', g);
+  @str: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.stretch$2', g);
+  @ac: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.align-center$2', g);
+  @ab: replace(e(@rc), '([a-z\-]+)(,|$)', '$1.align-bottom$2', g);
+  @{rc} {
+    display: flex;
+    align-content: stretch;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  @{rows} {
+    flex-direction: row !important;
+  }
+  @{columns} {
+    flex-direction: column !important;
+  }
+  @{nw} {
+    flex-wrap: nowrap !important;
+  }
+  @{str} {
+    align-items: stretch !important;
+  }
+  @{ac} {
+    align-items: center !important;
+  }
+  @{ab} {
+    align-items: flex-end !important;
+  }
+  .iter(length(@contents));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @pair: extract(@contents, @i);
+    @name: extract(@pair, 1);
+    @dir: extract(@pair, 2);
+    .row-@{name}, .column-@{name} {
+      & when not (@name = test) {
+        justify-content: @dir !important;
+      }
+    }
+    .row, .column {
+      & when (@name = test) {
+        justify-content: @dir !important;
+      }
+    }
+  }
+}
+
+.set-grids(@grids) {
+  .iter(length(@grids));
+  .iter(@i) when (@i > 0) {
+    .iter(@i - 1);
+    @grid: extract(@grids, @i);
+    @n: ~"@{column-prefix}-@{grid}";
+    .gridCounter(@col-count, @n);
+  }
+}
+
+.gridCounter(@j,@name) when (@j>0) {
+  .gridCounter(@j - 1, @name);
+  @w: (@j * 100)/@col-count;
+  .@{name}-@{j} {
+    width: unit(@w, %);
+  }
+  .@{name}-offset-right-@{j} when (@w<100) {
+    margin-right: unit(@w, %);
+  }
+  .@{name}-offset-left-@{j} when (@w<100) {
+    margin-left: unit(@w, %);
+  }
+}
+
+.set-grid-media(@prefix) {
+  @n: ~"@{column-prefix}-@{prefix}";
+  .gridCounter(@col-count, @n);
+}
+
+
+.rowColumns;
+.set-grids(@grids);
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+  .set-grid-media(xs);
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  .set-grid-media(sm);
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 808px) {
+  .set-grid-media(md);
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  .set-grid-media(lg);
+}
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .set-grid-media(lg);
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .set-grid-media(md);
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .set-grid-media(sm);
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .set-grid-media(xs);
+}
